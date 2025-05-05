@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Navbar extends StatelessWidget {
   final Widget tujuan;
@@ -14,7 +15,7 @@ class Navbar extends StatelessWidget {
           color: Colors.blue,
           boxShadow: [
             BoxShadow(
-              color: const Color.fromRGBO(0, 0, 0, 0.3), // warna bayangan
+              color: const Color.fromRGBO(0, 0, 0, 0.3), // warna bayangan`
               spreadRadius: 2, // seberapa luas bayangan
               blurRadius: 5, // seberapa blur bayangan
               offset: Offset(0, 5), // posisi bayangan (x, y)
@@ -29,18 +30,24 @@ class Navbar extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            IconButton(
-              onPressed: () {
+            SizedBox(width: 10),
+            GestureDetector(
+              onTap: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => tujuan),
                 );
               },
-              icon: Icon(Icons.sailing_outlined, color: Colors.white, size: 30),
+              child: Icon(
+                Icons.sailing_outlined,
+                color: Colors.white,
+                size: 30,
+              ),
             ),
+            SizedBox(width: 5),
             Text(
               "Sebuah Aplikasi",
-              style: TextStyle(
+              style: GoogleFonts.poppins(
                 fontWeight: FontWeight.bold,
                 fontSize: 20,
                 color: Colors.white,

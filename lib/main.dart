@@ -1,5 +1,5 @@
-import 'package:belajarflutter2/home_page.dart';
-import 'package:belajarflutter2/page2.dart';
+import 'package:belajarflutter2/pages/home_page.dart';
+import 'package:belajarflutter2/pages/page2.dart';
 import 'package:flutter/material.dart';
 // import 'page2.dart';
 

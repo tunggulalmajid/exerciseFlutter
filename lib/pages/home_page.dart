@@ -1,18 +1,20 @@
-import 'package:belajarflutter2/page2.dart';
+import 'package:belajarflutter2/pages/page2.dart';
+import 'package:belajarflutter2/theme.dart';
 import 'package:flutter/material.dart';
-import 'widgets/button_menu.dart';
-import 'widgets/navbar.dart';
-import 'widgets/bottom_navbar.dart';
+import 'package:google_fonts/google_fonts.dart';
+import '../widgets/button_menu.dart';
+import '../widgets/navbar.dart';
+import '../widgets/bottom_navbar.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final List<Map<String, String>> buttonAja = [
-      {"tittle": "SubHome", 'route': '/subhome'},
-      {"tittle": "Makna", 'route': '/subhome'},
-      {"tittle": "Rabes", 'route': '/home'},
+    final List<Map<String, dynamic>> buttonAja = [
+      {"tittle": "SubHome", 'route': HomePage()},
+      {"tittle": "Makna", 'route': MenuOne()},
+      {"tittle": "Rabes", 'route': HomePage()},
     ];
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -62,7 +64,7 @@ class HomePage extends StatelessWidget {
                 padding: EdgeInsets.all(5),
                 child: Text(
                   "Menu",
-                  style: TextStyle(
+                  style: GoogleFonts.poppins(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
@@ -82,11 +84,16 @@ class HomePage extends StatelessWidget {
                     buttonAja.map((button) {
                       return GestureDetector(
                         onTap: () {
-                          Navigator.pushNamed(context, "${button['route']}");
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => button['route'],
+                            ),
+                          );
                         },
                         child: ButtonMenu(
                           text: '${button['tittle']}',
-                          warna: Colors.amber,
+                          warna: secondaryColor,
                           panjang: 30,
                         ),
                       );

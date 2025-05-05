@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ButtonMenu extends StatelessWidget {
   const ButtonMenu({
@@ -29,7 +30,10 @@ class ButtonMenu extends StatelessWidget {
       child: Center(
         child: Text(
           text,
-          style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
+          style: GoogleFonts.montserrat(
+            fontSize: 17,
+            fontWeight: FontWeight.w700,
+          ),
         ),
       ),
     );

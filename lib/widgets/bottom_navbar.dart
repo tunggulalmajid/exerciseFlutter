@@ -1,6 +1,7 @@
-import 'package:belajarflutter2/home_page.dart';
+import 'package:belajarflutter2/pages/home_page.dart';
 import 'package:flutter/material.dart';
-import '../page2.dart';
+import '../pages/page2.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class BottomNav extends StatelessWidget {
   const BottomNav({super.key});
@@ -32,7 +33,7 @@ class BottomNav extends StatelessWidget {
                 Icon(size: 23, color: Colors.white, Icons.schedule_rounded),
                 Text(
                   "Schedule",
-                  style: TextStyle(
+                  style: GoogleFonts.poppins(
                     fontWeight: FontWeight.bold,
                     fontSize: 12,
                     color: Colors.white,
@@ -55,7 +56,7 @@ class BottomNav extends StatelessWidget {
                 Icon(size: 23, color: Colors.white, Icons.kebab_dining_rounded),
                 Text(
                   "Kebab",
-                  style: TextStyle(
+                  style: GoogleFonts.poppins(
                     fontWeight: FontWeight.bold,
                     fontSize: 12,
                     color: Colors.white,
@@ -78,7 +79,7 @@ class BottomNav extends StatelessWidget {
                 Icon(size: 23, color: Colors.white, Icons.home),
                 Text(
                   "Home",
-                  style: TextStyle(
+                  style: GoogleFonts.poppins(
                     fontWeight: FontWeight.bold,
                     fontSize: 12,
                     color: Colors.white,
@@ -101,7 +102,7 @@ class BottomNav extends StatelessWidget {
                 Icon(size: 23, color: Colors.white, Icons.gamepad),
                 Text(
                   "Game",
-                  style: TextStyle(
+                  style: GoogleFonts.poppins(
                     fontWeight: FontWeight.bold,
                     fontSize: 12,
                     color: Colors.white,
@@ -124,7 +125,7 @@ class BottomNav extends StatelessWidget {
                 Icon(size: 23, color: Colors.white, Icons.dark_mode_sharp),
                 Text(
                   "Mode",
-                  style: TextStyle(
+                  style: GoogleFonts.poppins(
                     fontWeight: FontWeight.bold,
                     fontSize: 12,
                     color: Colors.white,
