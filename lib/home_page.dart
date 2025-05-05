@@ -1,5 +1,8 @@
+import 'package:belajarflutter2/page2.dart';
 import 'package:flutter/material.dart';
 import 'widgets/button_menu.dart';
+import 'widgets/navbar.dart';
+import 'widgets/bottom_navbar.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
@@ -7,48 +10,19 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<Map<String, String>> buttonAja = [
-      {"tittle": "Page 1", 'route': '/'},
-      {"tittle": "Page 2", 'route': '/subhome'},
-      {"tittle": "Page 3", 'route': '/home'},
+      {"tittle": "SubHome", 'route': '/subhome'},
+      {"tittle": "Makna", 'route': '/subhome'},
+      {"tittle": "Rabes", 'route': '/home'},
     ];
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: const Color.fromARGB(255, 36, 36, 36),
-        appBar: AppBar(
-          backgroundColor: Colors.blue,
-          title: Row(
-            children: [
-              Icon(Icons.account_tree_rounded, size: 30, color: Colors.white),
-              SizedBox(width: 10),
-              Text(
-                "Get Skill",
-                style: TextStyle(
-                  color: const Color.fromARGB(255, 255, 255, 255),
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ],
-          ),
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(80),
+          child: Navbar(tujuan: HomePage()),
         ),
-        bottomNavigationBar: NavigationBar(
-          backgroundColor: Colors.blue,
-          destinations: [
-            NavigationDestination(
-              icon: IconButton(onPressed: () {}, icon: Icon(Icons.bedtime)),
-              label: "Sleeping",
-            ),
-            NavigationDestination(
-              icon: Icon(Icons.home, size: 30, color: Colors.white),
-              label: "Home",
-            ),
-            NavigationDestination(
-              icon: Icon(Icons.settings, size: 30, color: Colors.white),
-              label: "settings",
-            ),
-          ],
-        ),
+        bottomNavigationBar: BottomNav(),
 
         body: SingleChildScrollView(
           scrollDirection: Axis.vertical,
@@ -97,6 +71,7 @@ class HomePage extends StatelessWidget {
               ),
 
               GridView.count(
+                childAspectRatio: 1.5,
                 physics: NeverScrollableScrollPhysics(),
                 padding: EdgeInsets.all(10),
                 mainAxisSpacing: 5,
