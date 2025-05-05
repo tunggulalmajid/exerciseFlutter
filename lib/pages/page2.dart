@@ -12,8 +12,20 @@ class MenuOne extends StatefulWidget {
 }
 
 class _MenuOneState extends State<MenuOne> {
-  TextEditingController _controlInput1 = TextEditingController();
-  TextEditingController _controlInput2 = TextEditingController();
+  final TextEditingController _controlInput1 = TextEditingController();
+  final TextEditingController _controlInput2 = TextEditingController();
+
+  int hasil = 0; // variabel untuk menyimpan hasil perhitungan
+
+  void hitung() {
+    // Ambil nilai dari input, konversi ke int, jika kosong atau error jadi 0
+    int nilai1 = int.tryParse(_controlInput1.text) ?? 0;
+    int nilai2 = int.tryParse(_controlInput2.text) ?? 0;
+
+    setState(() {
+      hasil = nilai1 - nilai2; // Contoh operasi pengurangan
+    });
+  }
   // final int inputUser;
   // final int inputPassword;
 
@@ -130,7 +142,9 @@ class _MenuOneState extends State<MenuOne> {
               ),
               SizedBox(height: 1),
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  hitung();
+                },
                 child: Container(
                   width: 110,
                   height: 40,
@@ -205,7 +219,7 @@ class _MenuOneState extends State<MenuOne> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          "0",
+                          "$hasil",
                           style: GoogleFonts.poppins(
                             fontSize: 40,
                             fontWeight: FontWeight.bold,
